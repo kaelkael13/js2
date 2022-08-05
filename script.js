@@ -44,7 +44,7 @@ const Products = [
 
 const renderProduct = (img, title, price) => `
     <div class="productItem">
-        // <img src="${img}" alt="img">
+        <img src="${img}" alt="img">
         <p>${title}</p>
         <p>${price}</p>
     </div>
