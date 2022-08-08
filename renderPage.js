@@ -14,45 +14,36 @@ const Products = [
     },
 
     {
-        id: 0,
-        title: 'Телевизор',
-        price: 35000,
-        img: 'images/tv.webp'
-    },
-
-    {
-        id: 0,
+        id: 2,
         title: 'Монитор',
         price: 15000,
         img: 'images/monitor.webp'
     },
 
     {
-        id: 0,
-        title: 'Клавиатура',
-        price: 2000,
-        img: 'images/keyboard.webp'
-    },
-
-    {
-        id: 0,
+        id: 3,
         title: 'Наушники',
         price: 1500,
         img: 'images/headphones.webp'
     }
 ];
 
+
+// Как сделать второе задание я не понял :(
 const renderProduct = (img, title, price) => `
     <div class="productItem">
         <img src="${img}" alt="img">
-        <p>${title}</p>
-        <p>${price}</p>
+        <hr>
+        <h3>${title}</h3>
+        <p>${price} ₽</p>
+        <button class="addBtn">Добавить</button>
     </div>
 `
 
 const renderPage = list => {
     const productsList = list.map(item => renderProduct(item.img, item.title, item.price));
-    document.querySelector('.products').innerHTML = productsList;
+    document.querySelector('.products').innerHTML = productsList.join(' ');
+    // Метод join() используется для того чтобы убрать запятые, т.к. map() возвращает массив
 }
 
 renderPage(Products);
